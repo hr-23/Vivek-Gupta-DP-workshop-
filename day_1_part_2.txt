@@ -1,0 +1,39 @@
+now comes the coding part for all of these 
+the recurive code for climbing stairs 
+
+this works like this 
+
+**********************************************************************************************************************************************************
+#include<bits/stdc++.h>
+using namespace std;
+int rec(int level,int n)
+{
+    if(level==n)
+        return 1;
+    if(level>n)
+        return 0;
+    int ans=0;
+    for(int step=1;step<=3;step++)
+    {
+        if(level+step<=n)
+        {
+            int ways=rec(level+step,n);
+            ans+=ways;
+        }
+    }
+    return ans;
+}
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    #endif 
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    cout<<rec(0,3)<<"\n";
+}
+TC=o(3^n)
+which shows TLE for large inputs (44 input LC)
+**********************************************************************************************************************************************************
