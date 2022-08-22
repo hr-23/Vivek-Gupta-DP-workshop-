@@ -1,0 +1,56 @@
+intro to basic recursion (like factorial printting and fibinocci )
+
+example 1:
+next question on stairs sum 
+https://leetcode.com/problems/climbing-stairs/
+slight modification to this quesion (you can climb 1,2,3 steps at a time, find out how many distinct ways you can reach the nth step)
+
+anylyze the problem like this way 
+Level - current stair where we are standing 
+choice  - if we are at a particular level think of the choices like how many we have (like we have here 1,2,3 choices)
+check  - check whether it is a valid choice or not (like we should not move out of the bound) (these checks may be relevent in most of the problems) 
+move  - we have to move to that choice (and take a new reference form there) 
+        here exploring the choice and coming back
+        move to step (level +1/2/3)
+        
+        for today build a way how we can solve this using the brief idea you have ,and code accordingly with what you know (brute force)
+        
+     
+example 2:
+no of ways to place n no of queens  (there is also another question ,like no of ways to place two queens so that no attacker can attack the queens on nXn chessboard)
+
+but this question is of placing n queens on a NxN chessboard so that no two queens attack each other 
+https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
+
+now for n=1 (we will have one way )
+now for n=2 ( we cannot place the queeens satisfying the given condition )
+now for n=3 (here also we cannot find the no of ways , satisying the condition)
+now for n=8 we will have 92 ways 
+
+level  (move each cell and explore the choices )
+choice  place or not place
+check  if we can place the queen or not
+move   place the queen / not place the queen 
+
+here we should note that in one row there can be only one queen in one row and one clonumn 
+
+level - row 
+choice - coloumn 
+check -whether there is attack from the previous queens 
+move - place queen and move to next level
+
+exmple 3:
+in az workshop we have n questions and and ith problem takes {Ti , Si} time ti and increase skill by Si
+you have x time and k slots 
+find maximum skill you can get 
+exaample 
+{3,3} {5,4} {4,1} {2,3} {1,1}
+x=6 k=2 
+
+level -item. like for each item we have to take one more item as we have to choose 2 items 
+choice  - take/ not take 
+check  - time and count check
+move  -take this item and move forward (and explore other items)
+
+
+
